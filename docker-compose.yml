@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mongo:
+    image: "mongo:3.6"
+    command: "mongod --replSet myapp --port 27077 --profile=1 --slowms=0"
+    ports:
+      - 27077:27077
+    volumes:
+      - mongodata:/data/db
+
+volumes:
+  mongodata:
